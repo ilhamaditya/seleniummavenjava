@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="saucedemo.mavenproject.AppTest">
+      <class name="saucedemo.mavenproject.BuyProductTest">
         <methods>
-          <include name="endToEndTesting"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="buyProduct"/>
         </methods>
-      </class> <!-- saucedemo.mavenproject.AppTest -->
+      </class> <!-- saucedemo.mavenproject.BuyProductTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

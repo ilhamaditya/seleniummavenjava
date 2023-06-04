@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="saucedemo.mavenproject.DetailsProductPriceTest">
+        <methods>
+          <include name="detailsProductPrice"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- saucedemo.mavenproject.DetailsProductPriceTest -->
+      <class name="saucedemo.mavenproject.BuyProductTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="buyProduct"/>
+        </methods>
+      </class> <!-- saucedemo.mavenproject.BuyProductTest -->
+      <class name="saucedemo.mavenproject.AppTest">
+        <methods>
+          <include name="setup"/>
+          <include name="endToEndTesting"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- saucedemo.mavenproject.AppTest -->
+      <class name="saucedemo.mavenproject.LoginTest">
+        <methods>
+          <include name="setup"/>
+          <include name="login"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- saucedemo.mavenproject.LoginTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

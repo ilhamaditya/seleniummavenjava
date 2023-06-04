@@ -1,8 +1,9 @@
 package saucedemo.mavenproject;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Listeners;
@@ -22,9 +23,8 @@ public class SortProductsTest extends Hooks {
 
 	@Test
 	public void sortProducts() throws IOException, InterruptedException {
-		LoginTest login = new LoginTest();
-
-		login.login();
+		//		LoginTest login = new LoginTest();
+		//		login.login();
 
 		InventoryPage inventoryPage = new InventoryPage();
 
@@ -34,7 +34,7 @@ public class SortProductsTest extends Hooks {
 		WebElement activeSorting = inventoryPage.driver.findElement(By.cssSelector("span.active_option"));
 		String textSorting = activeSorting.getText();
 		System.out.println("text Sorting: " + textSorting);
-		Assert.assertEquals("Price (high to low)", textSorting);
+		AssertJUnit.assertEquals("Price (high to low)", textSorting);
 
 		Thread.sleep(3000);
 

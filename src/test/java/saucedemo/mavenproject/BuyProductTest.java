@@ -1,8 +1,9 @@
 package saucedemo.mavenproject;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
-import org.junit.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -25,8 +26,8 @@ public class BuyProductTest extends Hooks {
 	@Test
 	public void buyProduct() throws IOException, InterruptedException {
 		
-		DetailsProductPriceTest detailsProduct = new DetailsProductPriceTest();
-		detailsProduct.detailsProductPrice();
+		//		DetailsProductPriceTest detailsProduct = new DetailsProductPriceTest();
+		//		detailsProduct.detailsProductPrice();
 		
 		InventoryItemPage inventoryItem = new InventoryItemPage();
 		inventoryItem.getAddToCart().click();
@@ -45,16 +46,19 @@ public class BuyProductTest extends Hooks {
 		CheckoutStepTwoPage checkoutStepTwo = new CheckoutStepTwoPage();
 		String textCheckoutItemName = checkoutStepTwo.getLabelItemName().getText();
 		System.out.println("text Inventory Name: " + textCheckoutItemName);
-		Assert.assertEquals("Sauce Labs Fleece Jacket", textCheckoutItemName);
+		AssertJUnit.assertEquals("Sauce Labs Fleece Jacket", textCheckoutItemName);
 	
 		String textCheckoutPrice = checkoutStepTwo.getLabelItemPrice().getText();
 		System.out.println("text Inventory Price: " + textCheckoutPrice);
-		Assert.assertEquals("$49.99", textCheckoutPrice);
+		AssertJUnit.assertEquals("$49.99", textCheckoutPrice);
+		takeSnapShot("Your Cart");
 		checkoutStepTwo.getBtnFinish().click();
 		
 		Thread.sleep(3000);
-		CheckoutCompletePage checkoutComplete = new CheckoutCompletePage();
-		checkoutComplete.getBtnBackHome().click();
+//		CheckoutCompletePage checkoutComplete = new CheckoutCompletePage();
+//		checkoutComplete.getBtnBackHome().click();
+		
+		takeSnapShot("Thank you for your order!");
 		
 		
 		Thread.sleep(3000);

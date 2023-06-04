@@ -19,6 +19,7 @@ public class Hooks extends BasePage {
 	
 	@AfterTest
 	public void tearDown() throws IOException {
+//		takeSnapShot("Test Ilham");
 		WebDriverInstance.cleanupDriver();
 	}
 	
