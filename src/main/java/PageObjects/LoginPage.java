@@ -17,10 +17,6 @@ public class LoginPage extends BasePage{
 	By password = By.id("password");
 	By btnLogin = By.id("login-button");
 	
-//	public LoginPage(WebDriver driver) {
-//		this.driver = driver;
-//	}
-	
 	public LoginPage() throws IOException {
 		super();
 	}

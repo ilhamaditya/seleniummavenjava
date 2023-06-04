@@ -1,20 +1,25 @@
 package saucedemo.mavenproject;
 
-import static org.junit.Assert.assertTrue;
+import java.io.IOException;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+import base.Hooks;
 
-import org.junit.Test;
+@Listeners(resources.Listeners.class)
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
+public class AppTest extends Hooks
 {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
+	public AppTest() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Test
+    public void endToEndTesting() throws IOException, InterruptedException
     {
-        assertTrue( true );
+		
+		BuyProductTest endToEndTesting = new BuyProductTest();
+		endToEndTesting.buyProduct();
+        
     }
 }
